@@ -1,7 +1,64 @@
-total 12
-drwxr-xr-x 1 杨跃 197611 0 8月   3 10:24 ./
-drwxr-xr-x 1 杨跃 197611 0 8月   3 06:42 ../
-drwxr-xr-x 1 杨跃 197611 0 8月   3 06:53 css/
-drwxr-xr-x 1 杨跃 197611 0 8月   3 06:51 images/
--rw-r--r-- 1 杨跃 197611 0 8月   3 10:25 index.html
-drwxr-xr-x 1 杨跃 197611 0 8月   3 06:51 js/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            background-color: cornflowerblue;
+            overflow: hidden;
+        }
+        div {
+
+            display: block;
+        }
+        .fish1 {
+            width: 509px;
+            height: 270px;
+            background: url("images/shark1.png") no-repeat left top;
+            animation: run1 8s infinite linear,fish1 1s infinite steps(7);
+        }
+        .fish2 {
+            width: 174px;
+            height: 126px;
+            background: url("images/fish8.png") no-repeat left top;
+        }
+        .fish1:hover {
+            animation: run1 8s infinite linear paused,fish1 1s infinite steps(7) paused,fish2 0.5s infinite steps(3);
+        }
+        @keyframes fish1 {
+            0% {
+                background-position-y: 0px;
+            }
+            100% {
+                background-position-y: -1890px;
+            }
+        }
+        @keyframes run1 {
+            0% {
+                transform: translate(-600px);
+            }
+            100% {
+                transform: translate(2000px);
+            }
+        }
+        @keyframes fish2 {
+            0% {
+                /*transform: translate(0px,0px);*/
+                background-position-y: -2160px;
+            }
+            100% {
+                /*transform: translate(0px,0px);*/
+
+                background-position-y: -2970px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fish1"></div>
+    <div class="fish2"></div>
+</body>
+</html>
